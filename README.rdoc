@@ -1,0 +1,14 @@
+=Learnhowtoprogram.com Lesson re-create Project
+==Ruby on Rails project completed by Randy Leighton and Christian Danielsen.
+
+This project starts out creating one model  called Lesson for species with 7 restful actions.
+Then you work on duplicating the format and functionality of the learnhowtoprogram.com rails application.
+---
+Date 8/27/2014
+  Lesson - Index, New, Create, Show, Edit, Update, Destroy actions complete.
+---
+* This project uses the bundle gem to manage dependencies.
+* This was completed on ruby v2.0, rails 4.1.5
+* Database utilized: PostgreSQL
+* Database names: lesson_development, lesson_test
+* Testing utilizes rails helper and rspec 3.0 for Test Driven Development
