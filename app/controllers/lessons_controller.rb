@@ -2,6 +2,7 @@ class LessonsController < ApplicationController
 
 
   def index
+    @lessons_ordered = Lesson.order(number: :asc)
     @lessons = Lesson.all
     render('index.html.erb')
   end

@@ -3,7 +3,7 @@
 <h3>Lesson List</h3>
 
 <div>
-  <% @lessons.each do |lesson| %>
+  <% @lessons_ordered.each do |lesson| %>
     <p><%= lesson.number%>. <a href="/lessons/<%= lesson.id %>"> <%= lesson.name %></a></p>
   <% end %>
 </div>
