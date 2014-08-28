@@ -1,0 +1,21 @@
+<h1>New Lesson Management Page</h1>
+
+<h3>Current Lessons</h3>
+<ul>
+  <% @lessons.each do |lesson| %>
+    <li><a href="/lessons/<%= lesson.id %>"><%= lesson.number%>. <%= lesson.name %></a></li>
+  <% end %>
+</ul>
+<br>
+<h3>Enter New Lesson Information</h3>
+<form action="/lessons"method="post">
+  <label for="lesson_name">Name</label>
+  <input id="lesson_name" name="lesson[name]" type="text">
+  <label for="lesson_context">Context</label>
+  <input id="lesson_context" name="lesson[context]" type="text">
+  <label for="lesson_number">Lesson number</label>
+  <input id="lesson_number" name="lesson[number]" type="number">
+<button>Add Lesson</button>
+</form>
+
+<a href="/lessons"><img src="http://farmvillebaptistchurch.org/clientimages/50316/buttons/home%20button.gif" width=100 height=100></a>

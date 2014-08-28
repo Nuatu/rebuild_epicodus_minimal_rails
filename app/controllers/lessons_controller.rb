@@ -6,8 +6,11 @@ class LessonsController < ApplicationController
   end
 
   def new
+    @lessons = Lesson.all
     @lesson = Lesson.new
     render('new.html.erb')
   end
+
+
 
 end
