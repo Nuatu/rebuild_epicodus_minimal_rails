@@ -9,7 +9,7 @@ class Lesson < ActiveRecord::Base
   end
 
   def prev
-    prev_lesson = Lesson.where("number < ?", self.number).first
+    prev_lesson = Lesson.where("number < ?", self.number).last
   end
 
 end

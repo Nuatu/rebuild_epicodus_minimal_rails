@@ -8,5 +8,21 @@
       rel="nofollow">Delete this lesson</a>
 
 <br><br>
-<a href="/lessons"><img src="http://farmvillebaptistchurch.org/clientimages/50316/buttons/home%20button.gif" width=100 height=100></a>
 
+<div class="container">
+  <div class='row'>
+    <div class="column1">
+      <% if @lesson.prev != nil %>
+        <p><a href="/lessons/<%= @lesson.prev.id %>">Previous</a></p>
+      <% end %>
+    </div>
+    <div class="column2">
+      <% if @lesson.next != nil %>
+        <p><a href="/lessons/<%= @lesson.next.id %>">Next</a></p>
+      <% end %>
+    </div>
+    <div class="column3">
+      <p><a href="/lessons">Table of Contents</a></p>
+    </div>
+  </div>
+</div>
