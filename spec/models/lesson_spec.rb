@@ -14,4 +14,13 @@ describe Lesson do
       expect(current_lesson.next).to eq next_lesson
     end
   end
+
+  context '#prev' do
+    it "returns the previous lesson" do
+      lesson1 = Lesson.create({name: "Code Wizardry", context: "stuff about being a wizard", number: 1})
+      lesson2 = Lesson.create({name: "Code Wizardry Pt II", context: "stuff about being a wizard", number: 3})
+      expect(lesson2.prev).to eq lesson1
+    end
+  end
+
 end
