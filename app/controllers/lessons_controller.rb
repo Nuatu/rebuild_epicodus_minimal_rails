@@ -1,5 +1,6 @@
 class LessonsController < ApplicationController
 
+
   def index
     @lessons = Lesson.all
     render('index.html.erb')
@@ -12,8 +13,9 @@ class LessonsController < ApplicationController
   end
 
   def create
-    @lesson = Lesson.create(params[:lesson])
-    if @lesson.valid?
+    @lessons = Lesson.all
+    @lesson = Lesson.new(params[:lesson])
+    if @lesson.save
       redirect_to('/lessons')
     else
       render('new.html.erb')

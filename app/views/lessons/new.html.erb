@@ -8,14 +8,23 @@
 </div>
 <br>
 <h3>Enter New Lesson Information</h3>
+
+<% if @lesson.errors.any? %>
+  <ul>
+    <% @lesson.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
 <form action="/lessons"method="post">
-  <label for="lesson_name">Name</label>
-  <input id="lesson_name" name="lesson[name]" type="text">
-  <label for="lesson_context">Context</label>
-  <input id="lesson_context" name="lesson[context]" type="text">
   <label for="lesson_number">Lesson number</label>
-  <input id="lesson_number" name="lesson[number]" type="number">
-<button>Add Lesson</button>
+  <input id="lesson_number" name="lesson[number]" type="number" value="<%= @lesson.number %>">
+  <label for="lesson_name">Name</label>
+  <input id="lesson_name" name="lesson[name]" type="text" value="<%= @lesson.name %>">
+  <label for="lesson_context">Context</label>
+  <input id="lesson_context" name="lesson[context]" type="text" value="<%= @lesson.context %>">
+  <button>Add Lesson</button>
 </form>
 
 <a href="/lessons"><img src="http://farmvillebaptistchurch.org/clientimages/50316/buttons/home%20button.gif" width=100 height=100></a>
