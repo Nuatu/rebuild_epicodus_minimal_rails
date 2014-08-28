@@ -2,8 +2,8 @@
 
 <h3>Lesson List</h3>
 
-<ul>
+<div>
   <% @lessons.each do |lesson| %>
-    <li><a href="/lessons/<%= lesson.id %>"><%= lesson.name %></a></li>
+    <p><%= lesson.number%>. <a href="/lessons/<%= lesson.id %>"> <%= lesson.name %></a></p>
   <% end %>
-</ul>
+</div>

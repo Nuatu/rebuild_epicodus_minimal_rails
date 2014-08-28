@@ -1,11 +1,11 @@
 <h1>New Lesson Management Page</h1>
 
 <h3>Current Lessons</h3>
-<ul>
+<div>
   <% @lessons.each do |lesson| %>
-    <li><a href="/lessons/<%= lesson.id %>"><%= lesson.number%>. <%= lesson.name %></a></li>
+    <p><%= lesson.number%>. <a href="/lessons/<%= lesson.id %>"> <%= lesson.name %></a></p>
   <% end %>
-</ul>
+</div>
 <br>
 <h3>Enter New Lesson Information</h3>
 <form action="/lessons"method="post">
