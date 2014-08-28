@@ -4,5 +4,8 @@ class Lesson < ActiveRecord::Base
   validates_uniqueness_of :number
   validates :context, :presence => true
 
-  scope :desc, order("lessons.number DESC")
+  def next
+    next_lesson = Lesson.where("number > ?", self.number).first
+  end
+
 end
