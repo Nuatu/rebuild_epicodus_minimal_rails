@@ -1,3 +1,5 @@
+<% content_for(:title, "Show Lesson | Learn How to Program") %>
+
 <h3><%= @lesson.number %>. <%= @lesson.name %></h3>
 <p><%= @lesson.context %></p>
 
@@ -9,19 +11,22 @@
 
 <br><br>
 
-<div class="container">
+<div class="container-fluid">
   <div class='row'>
-    <div class="column1">
+    <div id="column1" class="col-xs-2">
       <% if @lesson.prev != nil %>
         <p><a href="/lessons/<%= @lesson.prev.id %>">Previous</a></p>
       <% end %>
     </div>
-    <div class="column2">
+    <div id="column2" class="col-xs-2" style='float:left; width:10%'>
       <% if @lesson.next != nil %>
         <p><a href="/lessons/<%= @lesson.next.id %>">Next</a></p>
       <% end %>
     </div>
-    <div class="column3">
+    <div id="column3" class="col-xs-3" style='float:left; width:20%'>
+      <p>Learn How to Program</p>
+    </div>
+    <div id="column4" class="col-xs-5" style='float:left; width:20%'>
       <p><a href="/lessons">Table of Contents</a></p>
     </div>
   </div>
