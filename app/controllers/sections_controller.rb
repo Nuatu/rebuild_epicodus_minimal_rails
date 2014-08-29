@@ -12,12 +12,13 @@ class SectionsController < ApplicationController
     if @section.save
       redirect_to('/sections')
     else
-      render('index.html.erb')
+      render('/sections/index.html.erb')
     end
   end
 
   def show
-
+    @section = Section.find(params[:id])
+    render('/sections/show.html.erb')
   end
 
   def edit

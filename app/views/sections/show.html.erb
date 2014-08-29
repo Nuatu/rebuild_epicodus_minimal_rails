@@ -1,0 +1,11 @@
+<% content_for(:title, "Show Section | Learn How to Program") %>
+
+<h3><%= @section.name %></h3>
+
+<p><a href="/sections/<%= @section.id %>/edit">Edit this section</a></p>
+<a href="/sections/<%= @section.id %>"
+      data-confirm="DO YOU KNOW WHAT YOU'RE DOING?"
+      data-method="delete"
+      rel="nofollow">Delete this section</a>
+
+<br><br>

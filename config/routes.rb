@@ -10,4 +10,6 @@ Rails.application.routes.draw do
 
   match('sections', {via: :get, to: 'sections#index'})
   match('sections', {via: :post, to: 'sections#create'})
+  match('sections/:id', {via: :get, to: 'sections#show'})
+
 end
