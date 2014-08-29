@@ -1,1 +1,10 @@
-index.html.erb
+<% content_for(:title, "Section Management | Learn How to Program") %>
+
+<h2> Section Management </h2>
+
+<h3>Section List</h3>
+<div>
+  <% @sections.each do |section| %>
+    <p><%= section.name%>. <a href="/sections/<%= section.id %>"> <%= section.name %></a></p>
+  <% end %>
+</div>

@@ -1,1 +1,3 @@
-sections_controller.rb
+class SectionsController < ApplicationController
+
+end
