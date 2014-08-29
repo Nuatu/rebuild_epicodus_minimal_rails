@@ -1,11 +1,24 @@
 <% content_for(:title, "Section Management | Learn How to Program") %>
 
-<h2> Section Management </h2>
-
-<h3>Section List</h3>
+<h2>Section Management</h2>
+<br><br>
+<h4>Section List</h4>
 <div>
   <% @sections.each do |section| %>
-    <p><%= section.name%>. <a href="/sections/<%= section.id %>"> <%= section.name %></a></p>
+    <p><a href="/sections/<%= section.id %>"> <%= section.name %></a></p>
   <% end %>
 </div>
 
+<% if @section.errors.any? %>
+  <div>
+    <% @section.errors.full_messages.each do || %>
+      <p><% message%></p>
+    <% end %>
+  </div>
+<% end %>
+
+<form action="/sections" method="post">
+<label for="section_name">Name</label>
+<input id="section_name" name="section[name]" type="text" value="<%= @section.name %>">
+<button>Add Name</button>
+</form>

@@ -7,7 +7,13 @@ class SectionsController < ApplicationController
   end
 
   def create
-
+    @sections = Section.all
+    @section = Section.new(params[:section])
+    if @section.save
+      redirect_to('/sections')
+    else
+      render('index.html.erb')
+    end
   end
 
   def show
