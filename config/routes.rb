@@ -8,4 +8,6 @@ Rails.application.routes.draw do
   match('lessons/:id', {via: [:patch, :put],to: 'lessons#update'})
   match('lessons/:id', {via: :delete, to: 'lessons#delete'})
 
+  match('sections', {via: :get, to: 'sections#index'})
+
 end
