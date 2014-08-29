@@ -35,8 +35,10 @@ class SectionsController < ApplicationController
     end
   end
 
-  def destroy
-
+  def delete
+    @section = Section.find(params[:id])
+    @section.destroy
+    redirect_to('/sections/')
   end
 
 end
