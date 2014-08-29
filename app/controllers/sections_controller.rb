@@ -22,11 +22,17 @@ class SectionsController < ApplicationController
   end
 
   def edit
-
+    @section = Section.find(params[:id])
+    render('/sections/edit.html.erb')
   end
 
   def update
-
+    @section = Section.find(params[:id])
+    if @section.update(params[:section])
+      redirect_to("/sections/#{@section.id}")
+    else
+      render('/sections/edit.html.erb')
+    end
   end
 
   def destroy
