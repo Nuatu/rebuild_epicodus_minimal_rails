@@ -5,8 +5,17 @@
 
 <div class="container-fluid">
   <div class="row">
-    <% @lessons_ordered.each do |lesson| %>
-      <p><%= lesson.number%>. <a href="/lessons/<%= lesson.id %>"> <%= lesson.name %></a></p>
+    <ul>
+    <% @sections.each do |section| %>
+      <li><p><%= section.name %></p></li>
+      <ul>
+        <% @lessons_ordered.each do |lesson| %>
+          <% if section.id == lesson.section_id %>
+            <li><a href="/lessons/<%= lesson.id %>"><%= lesson.name %></a></li>
+            <% end %>
+        <% end %>
+      </ul>
     <% end %>
+    </ul>
   </div>
 </div>

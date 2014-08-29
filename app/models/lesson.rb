@@ -5,6 +5,8 @@ class Lesson < ActiveRecord::Base
   validates :context, :presence => true
   belongs_to :section
 
+  default_scope { order(number: :asc) }
+
   def next
     next_lesson = Lesson.where("number > ?", self.number).first
   end
