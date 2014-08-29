@@ -8,16 +8,18 @@ class LessonsController < ApplicationController
   end
 
   def new
+    @sections = Section.all
     @lessons = Lesson.all
     @lesson = Lesson.new
     render('new.html.erb')
   end
 
   def create
+    @sections = Section.all
     @lessons = Lesson.all
     @lesson = Lesson.new(params[:lesson])
     if @lesson.save
-      redirect_to('/lessons')
+      redirect_to('/lessons/new')
     else
       render('new.html.erb')
     end
@@ -29,11 +31,13 @@ class LessonsController < ApplicationController
   end
 
   def edit
+    @sections = Section.all
     @lesson = Lesson.find(params[:id])
     render('edit.html.erb')
   end
 
   def update
+    @sections = Section.all
     @lesson = Lesson.find(params[:id])
     if @lesson.update(params[:lesson])
       redirect_to("/lessons/#{@lesson.id}")

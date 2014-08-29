@@ -3,10 +3,10 @@
 
 <h2> Table of Contents </h2>
 
-<h3>Lesson List</h3>
-
-<div>
-  <% @lessons_ordered.each do |lesson| %>
-    <p><%= lesson.number%>. <a href="/lessons/<%= lesson.id %>"> <%= lesson.name %></a></p>
-  <% end %>
+<div class="container-fluid">
+  <div class="row">
+    <% @lessons_ordered.each do |lesson| %>
+      <p><%= lesson.number%>. <a href="/lessons/<%= lesson.id %>"> <%= lesson.name %></a></p>
+    <% end %>
+  </div>
 </div>

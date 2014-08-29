@@ -3,27 +3,17 @@
 <h3>Current Lessons</h3>
 <div>
   <% @lessons.each do |lesson| %>
-    <p><%= lesson.number%>. <a href="/lessons/<%= lesson.id %>"> <%= lesson.name %></a></p>
+    <% current_section = Section.find(lesson.section_id) %>
+    <p>Lesson: <%= lesson.number%>. <a href="/lessons/<%= lesson.id %>"> <%= lesson.name %>, Section: <%=current_section.name  %></a></p>
   <% end %>
 </div>
 <br>
 <h3>Enter New Lesson Information</h3>
 
-<% if @lesson.errors.any? %>
-  <ul>
-    <% @lesson.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-    <% end %>
-  </ul>
-<% end %>
+<%= render('/layouts/errors', :object => @lesson) %>
 
 <form action="/lessons"method="post">
-  <label for="lesson_number">Lesson number</label>
-  <input id="lesson_number" name="lesson[number]" type="number" value="<%= @lesson.number %>">
-  <label for="lesson_name">Name</label>
-  <input id="lesson_name" name="lesson[name]" type="text" value="<%= @lesson.name %>">
-  <label for="lesson_context">Context</label>
-  <input id="lesson_context" name="lesson[context]" type="text" value="<%= @lesson.context %>">
+  <%= render('/layouts/form', :object => @sections) %>
   <button>Add Lesson</button>
 </form>
 
